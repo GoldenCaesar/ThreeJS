@@ -110,6 +110,9 @@ const zones = [
   zone('Picnic Table', 'picnic', 0, 8, 6, 5, 0x7eb0c5)
 ];
 
+const cameraLookTarget = new THREE.Vector3();
+const cameraDesiredPosition = new THREE.Vector3();
+
 zones.forEach((z) => {
   const area = new THREE.Mesh(
     new THREE.PlaneGeometry(z.size.x, z.size.y),
@@ -159,9 +162,10 @@ function animate() {
   updateMovement(dt);
   updateFormTransition(dt);
 
-  const camTarget = new THREE.Vector3(player.position.x, 0.7, player.position.z);
-  camera.position.lerp(new THREE.Vector3(player.position.x, 9, player.position.z + 10), 0.12);
-  camera.lookAt(camTarget);
+  cameraLookTarget.set(player.position.x, 0.7, player.position.z);
+  cameraDesiredPosition.set(player.position.x, 9, player.position.z + 10);
+  camera.position.lerp(cameraDesiredPosition, 0.12);
+  camera.lookAt(cameraLookTarget);
 
   renderer.render(scene, camera);
 }
