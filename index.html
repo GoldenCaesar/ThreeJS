@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>JZ Woodworks</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="scene"></canvas>
+
+      <section class="overlay">
+        <h1>JZ Woodworks</h1>
+        <p>Use the joystick or WASD / arrow keys to explore products.</p>
+      </section>
+
+      <section class="hud" aria-label="Movement controls">
+        <div id="joystick-base" class="joystick" role="application" aria-label="Touch joystick">
+          <div id="joystick-knob" class="joystick-knob"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

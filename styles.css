@@ -1,0 +1,75 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+  background: #111;
+}
+
+#scene {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #f6efe2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.overlay h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+}
+
+.overlay p {
+  margin: 0.35rem 0 0;
+  font-size: clamp(0.85rem, 2.7vw, 1.05rem);
+}
+
+.hud {
+  position: fixed;
+  bottom: 1.2rem;
+  left: 1rem;
+  z-index: 2;
+}
+
+.joystick {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid rgba(246, 239, 226, 0.35);
+  background: rgba(28, 28, 28, 0.5);
+  backdrop-filter: blur(2px);
+  position: relative;
+}
+
+.joystick-knob {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(246, 239, 226, 0.75);
+  border: 2px solid rgba(17, 17, 17, 0.5);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
